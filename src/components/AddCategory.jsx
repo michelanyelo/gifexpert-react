@@ -1,6 +1,6 @@
 import {useState} from "react";
 
-export const AddCategory = () => {
+export const AddCategory = ({onNewCategory}) => {
     const [inputValue, setInputValue] = useState('')
 
     const onInputChange = ({target}) => {
@@ -9,7 +9,10 @@ export const AddCategory = () => {
 
     const onSubmit = (e) => {
         e.preventDefault();
-        console.log(inputValue)
+        const inputValueFormatted = inputValue.trim();
+        if (inputValueFormatted.length <= 1) return;
+        onNewCategory(inputValueFormatted);
+        setInputValue('');
     }
 
     return (
@@ -18,6 +21,7 @@ export const AddCategory = () => {
                 type="text"
                 placeholder="Buscar..."
                 onChange={onInputChange}
+                value={inputValue}
             />
         </form>
     )
