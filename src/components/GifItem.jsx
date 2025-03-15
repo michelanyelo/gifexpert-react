@@ -1,5 +1,4 @@
-const GifItem = ({title, img, id}) => {
-    console.log({title, img, id});
+const GifItem = ({title, img}) => {
     return (
         <div className="card">
             <img src={img} alt={title}/>
