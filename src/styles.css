@@ -1,10 +1,11 @@
 * {
     font-family: Helvetica, Arial, sans-serif;
-    background-color: rgb(234, 234, 234);
+    background-color: #121212;
 }
 
 body {
     padding: 60px;
+    color: white;
 }
 
 input {
@@ -16,15 +17,28 @@ input {
     outline: none;
     padding: 10px 15px;
     width: 100%;
+    margin-top: 50px;
+}
+
+h1, h2, h3 {
+    color: white;
+    font-family: Helvetica, Arial, sans-serif;
+    margin: 0;
+}
+
+h1 {
+    font-size: 2.5rem;
+    font-weight: bold;
 }
 
 h2 {
     font-size: 1.5rem;
+    font-weight: bold;
 }
 
 h3 {
-    font-size: 3rem;
-    margin-bottom: 5px;
+    font-size: 1.2rem;
+    font-weight: normal;
 }
 
 .card-grid {
@@ -49,6 +63,7 @@ h3 {
     overflow: hidden;
     max-width: 300px;
     max-height: 400px;
+    color: black;
 }
 
 .card p {
@@ -64,4 +79,75 @@ h3 {
     width: 100%;
     height: 200px;
     object-fit: cover;
+}
+
+/* Para pantallas de 768px o más pequeñas */
+@media (max-width: 768px) {
+    body {
+        padding: 40px;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    h2 {
+        font-size: 1.3rem;
+    }
+
+    h3 {
+        font-size: 1rem;
+    }
+
+    .card-grid {
+        flex-direction: column; /* Cambiar a columna para pantallas más pequeñas */
+        justify-content: flex-start;
+    }
+
+    .card {
+        max-width: 100%; /* Tarjetas ocupan el 100% del ancho */
+        max-height: 350px; /* Limitar la altura de las tarjetas */
+        margin-right: 0; /* Eliminar margen derecho */
+    }
+
+    .card img {
+        height: 150px; /* Reducir altura de la imagen en pantallas pequeñas */
+    }
+
+    input {
+        font-size: 1rem; /* Reducir el tamaño de la fuente del input */
+    }
+}
+
+/* Para pantallas de 480px o más pequeñas */
+@media (max-width: 480px) {
+    body {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.5rem;
+    }
+
+    h2 {
+        font-size: 1.2rem;
+    }
+
+    h3 {
+        font-size: 0.9rem;
+    }
+
+    .card {
+        max-width: 100%; /* Tarjetas ocupan el 100% del ancho */
+        max-height: 300px; /* Limitar aún más la altura de las tarjetas */
+        margin-bottom: 15px; /* Ajustar margen inferior */
+    }
+
+    .card img {
+        height: 130px; /* Reducir más la altura de la imagen */
+    }
+
+    input {
+        font-size: 0.9rem; /* Reducir el tamaño de la fuente del input */
+    }
 }

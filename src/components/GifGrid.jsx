@@ -7,7 +7,7 @@ export const GifGrid = ({category}) => {
     const {gifs, isLoading} = useFetchGifs(category);
 
     return (<>
-        <h3>Gifs de {category}</h3>
+        <h3 style={{marginTop:50}}>Gifs de {category}</h3>
         {isLoading && <h4>Cargando...</h4>}
         <div className="card-grid">
             {gifs?.map((gif) => (
